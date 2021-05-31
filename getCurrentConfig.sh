@@ -10,4 +10,3 @@ cp -rv ~/.config/sxhkd confFiles/sxhkd
 cp -rv ~/.config/picom.conf confFiles/picom.conf
 
 echo "All config file updated with user ones!"
-return 0
