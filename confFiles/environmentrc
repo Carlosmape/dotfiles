@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#This script manages environment complementary tools
+#picom for bspwm compositor (enables some visual effects)
+picom
+#feh for background manager
+feh --bg-fill /usr/share/backgrounds/manjaro-simplicity.jpg 

@@ -5,6 +5,7 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 
+cp -v ~/.environmentrc confFiles/environmentrc
 cp -rv ~/.config/bspwm confFiles/bspwm
 cp -rv ~/.config/sxhkd confFiles/sxhkd
 cp -rv ~/.config/picom.conf confFiles/picom.conf
