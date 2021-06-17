@@ -9,5 +9,6 @@ cp -v ~/.environmentrc confFiles/environmentrc
 cp -rv ~/.config/bspwm confFiles/bspwm
 cp -rv ~/.config/sxhkd confFiles/sxhkd
 cp -rv ~/.config/picom.conf confFiles/picom.conf
+cp -rv ~/.config/polybar confFiles/polybar
 
 echo "All config file updated with user ones!"
