@@ -8,5 +8,6 @@ read
 echo "TODO: Installing packages"
 
 echo "TODO: Deploy environment settings"
+cp -rv confFiles/ ~/
 echo "# - Fetching background repository"
 git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
