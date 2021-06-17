@@ -18,4 +18,4 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 #run additional components
-exec ~/.environmentrc
+exec ~/.config/environmentrc
