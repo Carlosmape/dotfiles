@@ -7,3 +7,10 @@ picom &
 
 #Polybar (TBC: maybe use another panel)
 exec polybar example
+
+#Able touchpad gestures and more
+#Tap to click
+xinput set-prop 13 311 1
+
+#Touchpad gestures
+#libunput-gestures
