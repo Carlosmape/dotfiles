@@ -6,8 +6,8 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 echo "TODO: Installing packages"
-
+pacman -S bspwm polybar picom feh
 echo "TODO: Deploy environment settings"
-cp -rv confFiles/ ~/
+cp -rvf confFiles/* ~/.config/
 echo "# - Fetching background repository"
 git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
