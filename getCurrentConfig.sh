@@ -5,10 +5,10 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 
-cp -v ~/.environmentrc confFiles/environmentrc
-cp -rv ~/.config/bspwm confFiles/bspwm
-cp -rv ~/.config/sxhkd confFiles/sxhkd
-cp -rv ~/.config/picom.conf confFiles/picom.conf
-cp -rv ~/.config/polybar confFiles/polybar
+cp -v ~/.config/environmentrc 	confFiles/environmentrc
+cp -rv ~/.config/bspwm/bspwmrc 	confFiles/bspwm/bspwmrc
+cp -rv ~/.config/sxhkd/sxhkdrc 	confFiles/sxhkd/sxhkdrc
+cp -rv ~/.config/picom.conf 	confFiles/picom.conf
+cp -rv ~/.config/polybar/config	confFiles/polybar/config
 
 echo "All config file updated with user ones!"
