@@ -57,7 +57,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = rofimenu bspwm xwindow
 modules-center = 
-modules-right = xkeyboard filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-right = xkeyboard filesystem backlight-acpi pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -158,7 +158,7 @@ bar-empty-foreground = ${colors.foreground-alt}
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
-card = intel_backlight
+card = amdgpu_bl0
 
 [module/cpu]
 type = internal/cpu
@@ -344,9 +344,9 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = "  "
 label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-close = "❌cancel"
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
