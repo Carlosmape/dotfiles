@@ -127,14 +127,14 @@ Print
 #
 # Media keys
 #
-XF86AudioRaiseVolume
-	amixer -D pulse sset Master 5%+
-
-XF86AudioLowerVolume
-	amixer -D pulse sset Master 5%-
+XF86Audio{Raise,Lower}Volume
+	amixer -D pulse sset Master 5%{+,-}
 
 XF86AudioMute
 	amixer -D pulse sset Master toggle
+
+XF86MonBrightness{Up,Down}
+	brightnessctl s 16{+,-}
 
 #
 # Touchpad "gestures" (depend on your touchpad driver, very likely to be unavailable)
