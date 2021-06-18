@@ -122,8 +122,11 @@ super + {Left,Down,Up,Right}
 
 # screenshot
 Print
+	scrot -s -q 100
+
+alt + Print
 	scrot -q 100
-	
+
 #
 # Media keys
 #
