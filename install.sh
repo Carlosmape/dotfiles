@@ -6,7 +6,7 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 echo "TODO: Installing packages"
-pacman -S bspwm polybar picom feh brightnessctl
+pacman -S bspwm polybar picom feh brightnessctl dmenu urxvt scrot amixer
 echo "TODO: Deploy environment settings"
 cp -rvf confFiles/* ~/.config/
 echo "# - Fetching background repository"
