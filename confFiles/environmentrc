@@ -1,5 +1,8 @@
 #This script manages environment complementary tools
 #feh for background manager
+#  Update the repository to fetch images
+cd ~/Pictures/wallpapers/ && git pull
+cd ~/
 feh --bg-fill --randomize ~/Pictures/wallpapers/* 
 
 #picom for bspwm compositor (enables some visual effects)
