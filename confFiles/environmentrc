@@ -14,3 +14,6 @@ xinput set-prop 13 311 1
 
 #Touchpad gestures
 #libunput-gestures
+
+#Custom applications
+slimbookbattery
