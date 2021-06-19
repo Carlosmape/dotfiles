@@ -60,7 +60,10 @@ modules-center =
 modules-right = xkeyboard filesystem backlight-acpi pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
+tray-detached = true
+tray-offset-x = -30%
 tray-padding = 2
+tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -155,10 +158,15 @@ bar-empty = ─
 bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
+
+
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
 card = amdgpu_bl0
+
+scroll-down = brghtnessctl -s s 5%-
+scroll-up = brightnessctl -s s 5%+
 
 [module/cpu]
 type = internal/cpu
@@ -234,10 +242,10 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = VOL 
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted = 🔇 Muted 
 label-muted-foreground = #666
 
 bar-volume-width = 10
