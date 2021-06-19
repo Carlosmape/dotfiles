@@ -137,7 +137,7 @@ XF86AudioMute
 	amixer -D pulse sset Master toggle
 
 XF86MonBrightness{Up,Down}
-	brightnessctl s 16{+,-}
+	brightnessctl -s s 10%{+,-}
 
 #
 # Touchpad "gestures" (depend on your touchpad driver, very likely to be unavailable)
