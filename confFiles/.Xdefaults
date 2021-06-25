@@ -39,7 +39,7 @@ URxvt*transparent:       false
 URxvt*depth: 32
 URxvt.background: [95]#16130f
 
-URxvt.font: xft:Noto Mono:pixelsize=12
+URxvt.font: xft:Noto Mono:pixelsize=13
 URxvt.letterSpace: 0
 
 *antialias:  true
@@ -47,5 +47,6 @@ URxvt.letterSpace: 0
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: brave
+
 URxvt.matcher.button: 1
 
