@@ -6,12 +6,13 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 echo "# - Installing packages"
-sudo pacman -S bspwm polybar picom feh brightnessctl dmenu urxvt scrot amixer xorg-xfd nvim
+sudo pacman -S bspwm polybar feh brightnessctl dmenu urxvt scrot amixer xorg-xfd nvim
+sudo pamac install --no-confirm picom-jonaburg-git
 echo "# - Fetching background repository"
 git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
 echo "# - Fetching siji bitmap font repository"
 git clone https://github.com/stark/siji
-sudo ./siji/install.sh -d /usr/share/fonts/siji/
+./siji/install.sh -d /usr/share/fonts/siji/
 #sudo xset +fp /usr/share/fonts/siji/
 #sudo xset rehash && xset rehash
 echo "# - Fetching Vim-Plug plugin manager for nvim"
