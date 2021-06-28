@@ -6,17 +6,17 @@ cd ~/
 feh --bg-fill --randomize ~/Pictures/wallpapers/* 
 
 #picom for bspwm compositor (enables some visual effects)
-picom &
-
-#Polybar (TBC: maybe use another panel)
-exec polybar example
+picom > ~/.config/Environment_PicomLog.log 2>&1 &
 
 #Able touchpad gestures and more
 #Tap to click
-xinput set-prop 13 311 1
+xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
 
 #Touchpad gestures
 #libunput-gestures
 
 #Custom applications
-slimbookbattery
+slimbookbattery > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
+
+#Polybar (TBC: maybe use another panel)
+exec polybar example > ~/.config/Environment_PolybarLog.log 2>&1
