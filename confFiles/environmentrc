@@ -12,11 +12,9 @@ picom > ~/.config/Environment_PicomLog.log 2>&1 &
 #Tap to click
 xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
 
-#Touchpad gestures
-#libunput-gestures
-
 #Custom applications
 slimbookbattery > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
+pamac-tray > ~/.config/Environment_Pamac-trayLog.log 2>&1 &
 
 #Polybar (TBC: maybe use another panel)
 exec polybar example > ~/.config/Environment_PolybarLog.log 2>&1
