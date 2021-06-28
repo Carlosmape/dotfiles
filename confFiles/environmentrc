@@ -6,7 +6,7 @@ cd ~/
 feh --bg-fill --randomize ~/Pictures/wallpapers/* 
 
 #picom for bspwm compositor (enables some visual effects)
-picom > ~/.config/Environment_PicomLog.log 2>&1 &
+picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &
 
 #Able touchpad gestures and more
 #Tap to click
