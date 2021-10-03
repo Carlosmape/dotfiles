@@ -16,7 +16,7 @@ bspc rule -a Gimp desktop=III state=monocle follow=on
 bspc rule -a libreoffice desktop=II state=monocle follow=on
 bspc rule -a Screenkey manage=off
 bspc rule -a lxpanel manage=off
-bspc rule -a ulauncher border=off focus=on manage=off
+bspc rule -a Ulauncher border=off focus=on 
 
 #run additional components
 exec ~/.config/environmentrc
