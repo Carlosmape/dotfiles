@@ -47,11 +47,7 @@ modules-left = launcher bspwm
 modules-center = xwindow 
 
 ;module-margin = 2 
-tray-position = right
-tray-padding = 0 
-tray-detached = true
-tray-offset-x = 0
-tray-offset-y = 0
+
 ;wm-restack = bspwm
 
 ;override-redirect = true
@@ -68,8 +64,13 @@ foreground = ${colors.foreground}
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon siji:pixelsize=10;1"
-width = 10%
-offset-x = 90%
+width = 30%
+offset-x = 70%
+tray-position = right 
+tray-padding = 0 
+tray-detached = false 
+tray-offset-x = 0
+tray-offset-y = 0
 
 [module/launcher]
 type = custom/script
@@ -78,7 +79,7 @@ label = "  "
 ;%output%
 interval = 10
 exec = echo "hi"
-click-left = dmenu_run
+click-left = ulauncher 
 label-underline =  ${colors.secondary}
 
 [module/xwindow]
