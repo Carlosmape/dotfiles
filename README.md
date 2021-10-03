@@ -3,7 +3,8 @@
   - Desktop environment   
     - bspwm [Tiling window manager]   
     - sxhdk [Keyboard and mouse tracker for bspwm using Xorg]   
-    - lemonbar [Simple and lightweight panel]   
+    - lxdepanel [Simple and lightweight panel]   
+	- ulauncher [Menu launcher and file searcher]
     - feh [Simple app to watch images from CLI (also works as Wallpaper)]   
   - Applications    
     - urxvt [Hardware accelerated terminal emulator]    
