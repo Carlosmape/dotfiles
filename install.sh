@@ -6,7 +6,7 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 echo "# - Installing packages"
-sudo pacman -S bspwm polybar feh brightnessctl dmenu urxvt scrot amixer xorg-xfd nvim lxsession acpi
+sudo pacman -S bspwm polybar feh brightnessctl ulauncher urxvt scrot amixer xorg-xfd nvim lxsession acpi
 sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet
 echo "# - Fetching background repository"
 git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers

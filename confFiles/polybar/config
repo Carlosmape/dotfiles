@@ -29,7 +29,7 @@ alert = #bd2c40
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 90%
 height = 27
 fixed-center = false
 
@@ -39,32 +39,37 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 4
-border-color = #00000000
-
-padding-left = 0
-padding-right = 0
-
-module-margin-left = 1
-module-margin-right = 2
-
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon siji:pixelsize=10;1"
 
-modules-left = launcher bspwm xwindow
-modules-center = 
-modules-right =  xkeyboard filesystem memory cpu temperature date powermenu
+modules-left = launcher bspwm
+modules-center = xwindow 
 
-module-margin = 2 
+;module-margin = 2 
 tray-position = right
-tray-padding = 2 
-;tray-transparent = false
+tray-padding = 0 
+tray-detached = true
+tray-offset-x = 0
+tray-offset-y = 0
 ;wm-restack = bspwm
 
 ;override-redirect = true
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[bar/example1]
+height = 27
+line-size = 3
+line-color = #f00
+modules-right =  xkeyboard filesystem memory cpu temperature date powermenu
+background = ${colors.background}
+foreground = ${colors.foreground}
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = "Wuncon siji:pixelsize=10;1"
+width = 10%
+offset-x = 90%
 
 [module/launcher]
 type = custom/script
@@ -212,7 +217,7 @@ menu-1-0 = Power off
 menu-1-0-exec = shutdown 0
 
 [settings]
-screenchange-reload = true
+screenchange-reload = false
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source

@@ -10,13 +10,13 @@ bspc config focused_border_color "#ffb52a"
 
 bspc config split_ratio          0.5
 
-bspc config focus_follows_pointer true
+bspc config focus_follows_pointer false
 
 bspc rule -a Gimp desktop=III state=monocle follow=on
-bspc rule -a libreoffice desktop=II follow=on
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
+bspc rule -a libreoffice desktop=II state=monocle follow=on
 bspc rule -a Screenkey manage=off
+bspc rule -a lxpanel manage=off
+bspc rule -a ulauncher border=off
 
 #run additional components
 exec ~/.config/environmentrc

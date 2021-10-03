@@ -10,7 +10,9 @@ picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &
 
 #Able touchpad gestures and more
 #Tap to click
-xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
+#xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
+xinput set-prop 13 313 1
+xinput set-prop 13 'libinput Accel Speed' 0.2
 
 #Polkit agent (GUI for ask password)
 lxpolkit > ~/.config/Environment_LxPolkitLog.log 2>&1 & 
@@ -24,6 +26,8 @@ cbatticon &
 pa-applet &
 
 #Polybar (TBC: maybe use another panel)
-exec polybar example > ~/.config/Environment_PolybarLog.log 2>&1
-#exec lxpanel > ~/.config/Environment_LxpanelLog.log 2>&1
+#polybar example > ~/.config/Environment_PolybarLog.log 2>&1 &
+#polybar example1 > ~/.config/Environment_Polybar1Log.log 2>&1 &
+bspc config top_padding 17 &
+exec lxpanel > ~/.config/Environment_LxpanelLog.log 2>&1
 #exec xfce4-panel > ~/.config/Environment_Xfce4panelLog.log 2>&1
