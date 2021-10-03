@@ -17,15 +17,17 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
+background = ${xrdb:color0:#222}
 background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+foreground = ${xrdb:color7:#222}
 foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+
+alert = ${xrdb:color1:#bd2c40}
+primary = ${xrdb:color2:#ffb52a}
+secondary = ${xrdb:color3:#e60053}
+terciary = ${xrdb:color4:#e60053}
+cuaternary = ${xrdb:color5:#e60053}
+quintuenary = ${xrdb:color6:#e60053} 
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -41,7 +43,7 @@ line-color = #f00
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon siji:pixelsize=10;1"
+font-2 = "Wuncon siji:pixelsize=16;1"
 
 modules-left = launcher bspwm
 modules-center = xwindow 
@@ -58,14 +60,14 @@ cursor-scroll = ns-resize
 height = 27
 line-size = 3
 line-color = #f00
-modules-right =  xkeyboard filesystem memory cpu temperature date powermenu
+modules-right =  filesystem memory cpu temperature date powermenu
 background = ${colors.background}
 foreground = ${colors.foreground}
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon siji:pixelsize=10;1"
-width = 45%
-offset-x = 55%
+font-2 = "Wuncon siji:pixelsize=12;1"
+width = 43%
+offset-x = 57%
 module-margin = 1 
 tray-position = center
 tray-padding = 0 
@@ -85,8 +87,8 @@ label-underline =  ${colors.secondary}
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:40:...%
-label-underline =  ${colors.primary}
+label = %title:0:32:...%
+label-underline =  ${colors.secondary}
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -111,7 +113,7 @@ interval = 25
 mount-0 = /
 
 label-mounted = " %percentage_used%%"
-label-mounted-underline = #9f78e1
+label-mounted-underline = ${colors.terciary}
 
 [module/bspwm]
 type = internal/bspwm
@@ -150,7 +152,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.cuaternary}
 label = %percentage:2%%
 
 [module/memory]
@@ -158,7 +160,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.quintuenary}
 label = %percentage_used%%
 
 [module/date]
@@ -203,9 +205,9 @@ expand-right = false
 format-spacing = 1
 
 label-open = "  "
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.alert}
 label-close = "x"
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.alert}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
