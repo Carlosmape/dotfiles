@@ -7,8 +7,8 @@
 *.background:  #282828
 *.cursorColor:  #9ea7a6
 ! black
-*.color0:      #282828
-*.color8:      #1d2021
+*.color0:      #1d2021
+*.color8:      #282828
 ! red
 *.color1:      #cc241d
 *.color9:      #fb4934
@@ -35,10 +35,10 @@ URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       true
-URxvt*shading:       10
+URxvt*shading:       15
 
 URxvt*depth: 32
-URxvt.background: #282828
+URxvt.background: [15]#282828
 
 URxvt.font: xft:Droid Sans Mono:pixelsize=12
 URxvt.letterSpace: 0
@@ -48,5 +48,6 @@ URxvt.letterSpace: 0
 
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: brave
+
 URxvt.matcher.button: 1
 
