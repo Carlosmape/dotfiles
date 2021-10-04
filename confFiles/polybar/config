@@ -197,29 +197,34 @@ ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
-
 [module/powermenu]
-type = custom/menu
+type = custom/text
+content-foreground = ${colors.alert}
+content = "  "
+click-left = lxsession-logout
 
-expand-right = false
-format-spacing = 1
-
-label-open = "  "
-label-open-foreground = ${colors.alert}
-label-close = "x"
-label-close-foreground = ${colors.alert}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = 
-menu-0-0-exec = reboot
-menu-0-1 = 
-menu-0-1-exec = #powermenu.open.1
-menu-0-2 = 
-menu-0-2-exec = systemctl suspend 
-
-menu-1-0 = Power off
-menu-1-0-exec = shutdown 0
+;[module/powermenu]
+;type = custom/menu
+;
+;expand-right = false
+;format-spacing = 1
+;
+;label-open = "  "
+;label-open-foreground = ${colors.alert}
+;label-close = "x"
+;label-close-foreground = ${colors.alert}
+;label-separator = |
+;label-separator-foreground = ${colors.foreground-alt}
+;
+;menu-0-0 = 
+;menu-0-0-exec = reboot
+;menu-0-1 = 
+;menu-0-1-exec = #powermenu.open.1
+;menu-0-2 = 
+;menu-0-2-exec = systemctl suspend 
+;
+;menu-1-0 = Power off
+;menu-1-0-exec = shutdown 0
 
 [settings]
 screenchange-reload = false
