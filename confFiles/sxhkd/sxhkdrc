@@ -140,13 +140,6 @@ XF86MonBrightness{Up,Down}
 	brightnessctl -s s 10%{+,-}
 
 #
-# Touchpad "gestures" (depend on your touchpad driver, very likely to be unavailable)
+# Touchpad "gestures" managed with libinput-gestures (see .config/libinput-gestures.conf)
 #
 
-### Three finger swipe (left or right) to change desktop
-@button{10,11}
-    bspc desktop -f {prev,next}
-
-### Three finger swipe (up) to launch dswitcher
-@button8
-    dswitcher & xdotool mousemove 640 400
