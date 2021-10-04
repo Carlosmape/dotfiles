@@ -34,11 +34,16 @@
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
-URxvt*transparent:       false
+URxvt*transparent:       true
+URxvt*shading:       5
 
 URxvt.font: xft:Droid Sans Mono:pixelsize=12
 URxvt.letterSpace: 0
 
 *antialias:  true
 *autohint:   true
+
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: brave
+URxvt.matcher.button: 1
 
