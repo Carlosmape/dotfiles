@@ -14,6 +14,7 @@ bspc config focus_follows_pointer false
 
 bspc rule -a Gimp desktop=III state=monocle follow=on
 bspc rule -a libreoffice desktop=II state=monocle follow=on
+bspc rule -a thunderbird desktop=II state=monocle follow=on
 bspc rule -a Screenkey manage=off
 bspc rule -a lxpanel manage=off
 bspc rule -a Ulauncher border=off focus=on 
