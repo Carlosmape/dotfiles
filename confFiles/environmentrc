@@ -13,6 +13,7 @@ picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &
 #xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
 xinput set-prop 13 313 1
 xinput set-prop 13 'libinput Accel Speed' 0.2
+libinput-gestures-setup restart
 
 #Polkit agent (GUI for ask password)
 lxpolkit > ~/.config/Environment_LxPolkitLog.log 2>&1 & 
