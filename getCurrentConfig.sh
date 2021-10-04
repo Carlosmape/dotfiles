@@ -10,5 +10,5 @@ cp -rvf ~/.config/bspwm/bspwmrc 	confFiles/bspwm/bspwmrc
 cp -rvf ~/.config/sxhkd/sxhkdrc 	confFiles/sxhkd/sxhkdrc
 cp -rvf ~/.config/picom.conf		confFiles/picom.conf
 cp -rvf ~/.config/polybar/config	confFiles/polybar/config
-cp -rvf ~/.Xdefaults			confFiles/.Xdefaults
+cp -rvf ~/.Xresources				confFiles/.Xresources
 echo "All config file updated with user ones!"
