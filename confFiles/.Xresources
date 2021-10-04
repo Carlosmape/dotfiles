@@ -35,7 +35,10 @@ URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
 URxvt*transparent:       true
-URxvt*shading:       5
+URxvt*shading:       10
+
+URxvt*depth: 32
+URxvt.background: #282828
 
 URxvt.font: xft:Droid Sans Mono:pixelsize=12
 URxvt.letterSpace: 0
