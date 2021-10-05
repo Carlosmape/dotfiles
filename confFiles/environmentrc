@@ -31,7 +31,8 @@ pkill cbatticon;
 cbatticon &
 pkill pa-applet;
 pa-applet &
-
+pkill pcmanfm;
+pcmanfm -d &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
