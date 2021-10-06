@@ -30,6 +30,8 @@
 ! white
 *.color7:      #fbf1c7
 *.color15:     #ebdbb2
+! orange
+*.color16: 	   #fe8019
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
