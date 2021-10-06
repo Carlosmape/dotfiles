@@ -33,6 +33,8 @@ pkill pa-applet;
 pa-applet &
 pkill pcmanfm;
 pcmanfm -d &
+pkill ulauncher;
+ulauncher --hide-window &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
