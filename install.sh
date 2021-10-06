@@ -6,8 +6,8 @@ echo "Press ENTER to CONTINUE"
 echo "Press CTRL + C to CANCEL"
 read
 echo "# - Installing packages"
-sudo pacman -S bspwm polybar feh brightnessctl urxvt scrot amixer xorg-xfd nvim lxsession acpi
-sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet ulauncher libinput-gestures pcmanfm
+sudo pacman -S bspwm polybar feh brightnessctl urxvt scrot xorg nvim lxsession acpi
+sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet ulauncher libinput-gestures pcmanfm manjaro-pipewire
 echo "# - Fetching background repository"
 git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
 echo "# - Fetching siji bitmap font repository"
