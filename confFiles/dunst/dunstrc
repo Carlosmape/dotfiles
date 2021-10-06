@@ -20,7 +20,7 @@
     # message displayed.  A positive x is measured from the left, a
     # negative from the right side of the screen.  Y is measured from
     # the top and down respectively.
-    geometry = "300x100-40+45"
+    geometry = "400x100-20+45"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes
@@ -60,7 +60,7 @@
     idle_threshold = 120
 
     ### Text ###
-    font = icons 12
+    font = icons 10
 	#font = "Font Awesome 5 Free Regular" 12
     #        For a complete reference see
     #        <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
