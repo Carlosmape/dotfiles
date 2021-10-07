@@ -126,17 +126,19 @@ super + {Left,Down,Up,Right}
 # screenshot
 #Screenshot to file (inside ~/Pictures/) selected area
 Print + shit
-	scrot -s ~/Pictures/%b%d_%H%M%S.png
+	scrot -s ~/Pictures/%b%d_%H%M%S.png -e '&& notify-send -a "scrot" "Screenshot saved" "$f"'
+
 #Screenshot to clipboard selected area
-Print 
-	scrot -s -e 'xclip -selection clipboard -t image/png -i $f' ~/Pictures/%b%d_%H%M%S.png
+@Print 
+	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f"' ~/Pictures/%b%d_%H%M%S.png
+	
 
 #Screenshot to file (inside ~/Pictures/) active node
 Print + alt + shift
-	scrot -u ~/Pictures/%b%d_%H%M%S.png
+	scrot -u ~/Pictures/%b%d_%H%M%S.png -e '&& notify-send -a "scrot" "Screenshot saved" "$f"'
 #Screenshot to clipboard active node
 Print + alt
-	scrot -u -e 'xclip -selection clipboard -t image/png -i $f' ~/Pictures/%b%d_%H%M%S.png
+	scrot -u -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f"' ~/Pictures/%b%d_%H%M%S.png
 
 #
 # Media keys
