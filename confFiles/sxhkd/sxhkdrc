@@ -124,11 +124,19 @@ super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
 # screenshot
-Print
-	scrot -s -q 100
+#Screenshot to file (inside ~/Pictures/) selected area
+Print + shit
+	scrot -s ~/Pictures/%b%d_%H%M%S.png
+#Screenshot to clipboard selected area
+Print 
+	scrot -s -e 'xclip -selection clipboard -t image/png -i $f' ~/Pictures/%b%d_%H%M%S.png
 
-alt + Print
-	scrot -q 100
+#Screenshot to file (inside ~/Pictures/) active node
+Print + alt + shift
+	scrot -u ~/Pictures/%b%d_%H%M%S.png
+#Screenshot to clipboard active node
+Print + alt
+	scrot -u -e 'xclip -selection clipboard -t image/png -i $f' ~/Pictures/%b%d_%H%M%S.png
 
 #
 # Media keys
