@@ -20,7 +20,7 @@
     # message displayed.  A positive x is measured from the left, a
     # negative from the right side of the screen.  Y is measured from
     # the top and down respectively.
-    geometry = "400x100-20+45"
+    geometry = "500x100-20+45"
 
     # Show how many messages are currently hidden (because of geometry).
     indicate_hidden = yes

@@ -8,6 +8,7 @@ read
 cp -rvf ~/.config/environmentrc 	confFiles/environmentrc
 cp -rvf ~/.config/bspwm/bspwmrc 	confFiles/bspwm/bspwmrc
 cp -rvf ~/.config/sxhkd/sxhkdrc 	confFiles/sxhkd/sxhkdrc
+cp -rvf ~/.config/sxhkd/help 		confFiles/sxhkd/help
 cp -rvf ~/.config/picom.conf		confFiles/picom.conf
 cp -rvf ~/.config/polybar/config	confFiles/polybar/config
 cp -rvf ~/.config/dunst/dunstrc		confFiles/dunst/dunstrc

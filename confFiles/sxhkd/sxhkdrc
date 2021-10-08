@@ -1,158 +1,106 @@
-#
-# wm independent hotkeys
-#
-
-# terminal emulator
-super + Return
+	#
+	#Keep this comment just like this. To keep help script format, follow this rules
+	#Lines that begins with spaces will not display in help
+	#Add command description just at the end with a comment (#)
+	#To hide a shortcut in help script, just add white spaces (tabs) at the line begining
+	#Try to make brief descriptions. For more info see help script in the same sxhdk forlder
+	#
+	
+super + Return #Terminal emulator
 	urxvt
 
-# program launcher
-super + @space
+super + @space #Ulauncher launcher 
 	ulauncher-toggle	
 
-# make sxhkd reload its configuration files:
-super + Escape
+super + Escape #Reload sxhkd config
 	pkill -USR1 -x sxhkd && dunstify "sxhkd" "Reloaded" -t 1000 -u NORMAL
 
-#
-# bspwm hotkeys
-#
-# quit/restart bspwm
-super + alt + r
+super + alt + r #Quit/restart bspwm
 	bspc wm -r && dunstify "bspwm" "Reloaded" -t 1000 -u NORMAL
 
-# close and kill
-super + {_,shift + }w
+super + {_,shift + }w #Close/kill active window
 	bspc node -{c,k}
 
-# alternate between the tiled and monocle layout
-super + m
+super + m #Toggle monocle mode 
 	bspc desktop -l next && dunstify "Monocle" "Toggled" -t 1000 -u LOW
 
-# send the newest marked node to the newest preselected node
-super + y
+super + y #send the newest marked node to the newest preselected node
 	bspc node newest.marked.local -n newest.!automatic.local
 
-# swap the current node and the biggest window
-super + g
+super + g #Active window to biggest node
 	bspc node -s biggest.window
 
-#
-# state/flags
-#
-
-# set the window state
-#super + {t,shift + t,s,f}
-#	bspc node -t {tiled,pseudo_tiled,floating,fullscreen} && dunstify "Hi"
-
-super + t
+super + t #Back to tiled mode
 	bspc node -t tiled && dunstify "Fullscreen" "Off" -t 1000 -u LOW
-super + f
+
+super + f #To fullscreen
 	bspc node -t fullscreen && dunstify "Fullscreen" "On" -t 1000 -u LOW
-# set the node flags
-super + ctrl + {m,x,y,z}
+
+super + ctrl + {m,x,y,z} #Set the node flags
 	bspc node -g {marked,locked,sticky,private}
 
-#
-# focus/swap
-#
-
-# focus the node in the given direction
-super + {_,shift + }{h,j,k,l}
+super + {_,shift + }{h,j,k,l} #Focus the node in the given direction
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
+super + {p,b,comma,period} #Focus the node for the given path jump
 	bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
+super + {_,shift + }c #Focus the next/previous window in the current desktop
 	bspc node -f {next,prev}.local.!hidden.window
 
-# focus the next/previous desktop in the current monitor
-super + bracket{left,right}
+super + bracket{left,right} #Focus the next/previous desktop in the current monitor
 	bspc desktop -f {prev,next}.local
 
-# focus the last node/desktop
-super + {grave,Tab}
+super + {grave,Tab} #Focus the last node/desktop
 	bspc {node,desktop} -f last
 
-# focus the older or newer node in the focus history
-super + {o,i}
+super + {o,i} #Focus the older or newer node in the focus history
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on
 
-# focus or send to the given desktop
-super + {_,shift + }{1-9,0}
+super + {_,shift + }{1-9,0} #Focus or send to the given desktop
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#
-# preselect
-#
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
+super + ctrl + {h,j,k,l} #Preselect the direction
 	bspc node -p {west,south,north,east}
 
-# preselect the ratio
-super + ctrl + {1-9}
+super + ctrl + {1-9} #Preselect the ratio
 	bspc node -o 0.{1-9}
 
-# cancel the preselection for the focused node
-super + ctrl + space
+super + ctrl + space #Cancel the preselection for the focused node
 	bspc node -p cancel
 
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
+super + ctrl + shift + space #Cancel the preselection for the focused desktop
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
-
-# expand a window by moving one of its side outward
-super + alt + {h,j,k,l}
+super + alt + {h,j,k,l} #Expand a window by moving one of its side outward
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
 
-# contract a window by moving one of its side inward
-super + alt + shift + {h,j,k,l}
+super + alt + shift + {h,j,k,l} #Contract a window by moving one of its side inward
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# move a floating window
-super + {Left,Down,Up,Right}
+super + {Left,Down,Up,Right} #Move a floating window
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-# screenshot
-#Screenshot to file (inside ~/Pictures/) selected area
-Print + shit
+Print + shit #Screenshot to file (inside ~/Pictures/) selected area
 	scrot -s ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
 
-#Screenshot to clipboard selected area
-@Print 
+@Print #Screenshot to clipboard selected area
 	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
 	
-
-#Screenshot to file (inside ~/Pictures/) active node
-Print + alt + shift
+Print + alt + shift #Screenshot to file (inside ~/Pictures/) active node
 	scrot -u ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
-#Screenshot to clipboard active node
-Print + alt
+
+Print + alt #Screenshot to clipboard active node
 	scrot -u -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
 
-#
-# Media keys
-#
-XF86Audio{Raise,Lower}Volume
+XF86Audio{Raise,Lower}Volume #Media volume control
 	amixer -D pulse sset Master 5%{+,-}
 
-XF86AudioMute
+XF86AudioMute #Media mute/unmute
 	amixer -D pulse sset Master toggle
 
-XF86MonBrightness{Up,Down}
+XF86MonBrightness{Up,Down} #Media brightness control
 	brightnessctl -s s 10%{+,-}
-
-#
-# Touchpad "gestures" managed with libinput-gestures (see .config/libinput-gestures.conf)
-#
 
