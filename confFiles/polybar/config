@@ -50,7 +50,7 @@ cursor-scroll = ns-resize
 height = 27
 line-size = 3
 line-color = #f00
-modules-right =  filesystem memory cpu temperature date powermenu
+modules-right =  filesystem memory cpu temperature date help powermenu
 background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = fixed:pixelsize=9;1
@@ -81,6 +81,13 @@ type = custom/text
 content = "   " 
 click-left = ulauncher-toggle 
 label-layout-underline =  ${colors.secondary}
+content-foreground = ${colors.primary}
+
+[module/help]
+type = custom/text
+content = "  " 
+click-left = sh ~/.config/sxhkd/help
+layout-underline =  ${colors.secondary}
 content-foreground = ${colors.primary}
 
 [module/xwindow]

@@ -1,6 +1,4 @@
 #!/bin/bash
 
-#shortcuts=$(grep "^[^[:blank:]]" sxhkdrc)
-shortcuts=$(grep "^[^[:blank:]]" sxhkdrc | sed  -e "s/#/<b>/g" | sed "s/$/<\/b>/g")
-
+shortcuts=$(grep "^[^[:blank:]]" ~/.config/sxhkd/sxhkdrc | sed 's/^[^#]/\t&/' |sed -e 's/^[#].*/<b>&<\/b>/' | sed 's/#//')
 dunstify -a "Environment help" "⌨️ Shortcuts" "<small>$shortcuts</small>" -t 10000 
