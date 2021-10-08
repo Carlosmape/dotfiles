@@ -8,7 +8,7 @@ argDeploy="deploy"
 if [ $# -eq 1 ]
 then
 	
-	if [ $1 != $argInstall || $1 != $argDeploy ]
+	if [ $1 != $argInstall ] && [ $1 != $argDeploy ];
 	then
 		echo "Given unknown paramenter"
 		exit 1
@@ -21,8 +21,9 @@ then
 
 	installed=false
 
-	if [ $1 == $argInstall ]
+	if [ $1 = $argInstall ];
 	then
+		echo "INSTALLING..."
 		echo "# - Installing packages"
 		sudo pacman -S bspwm polybar feh brightnessctl urxvt scrot xorg nvim lxsession acpi
 		sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet ulauncher libinput-gestures pcmanfm manjaro-pipewire
@@ -41,8 +42,9 @@ then
 		installed=true
 	fi
 
-	if [ $1 == $argDeploy || $installed ]
+	if [ $1 = $argDeploy ] || [ $installed ];
 	then
+		echo "DEPLOYING..."
 		echo "# - Fetching Vim-Plug plugin manager for nvim"
 		sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -58,7 +60,7 @@ then
 		exit 0
 	fi
 else
-	echo "Please specify install or deploy parameter to run this script."
+	echo "Please specify install or deploy parameters to run this script."
 	echo "  'install' option will both, install needed packages and deploy dotfiles"
 	echo "  'deploy' option will just copy dotfiles to your home folder"
 	exit 1
