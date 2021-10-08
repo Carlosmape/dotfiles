@@ -1,0 +1,50 @@
+#This script manages environment complementary tools
+#feh for background manager
+#  Update the repository to fetch images
+cd ~/Pictures/wallpapers/ && git pull
+cd ~/
+feh --bg-fill --randomize ~/Pictures/wallpapers/* 
+
+#picom for bspwm compositor (enables some visual effects)
+picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &
+
+#Able touchpad gestures and more
+#Tap to click
+#xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
+xinput set-prop 13 313 1
+xinput set-prop 13 'libinput Accel Speed' 0.2
+libinput-gestures-setup restart &
+
+#Polkit agent (GUI for ask password)
+lxpolkit > ~/.config/Environment_LxPolkitLog.log 2>&1 & 
+
+#Custom applications (systray applications)
+pkill -f slimbookbattery;
+slimbookbattery > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
+pkill pamac-tray;
+pamac-tray > ~/.config/Environment_Pamac-trayLog.log 2>&1 &
+pkill nm-applet;
+nm-applet &
+pkill blueman-applet;
+blueman-applet &
+pkill cbatticon;
+cbatticon &
+pkill pa-applet;
+pa-applet &
+pkill pcmanfm;
+pcmanfm -d &
+pkill ulauncher;
+ulauncher --hide-window &
+
+#Polybar (TBC: maybe use another panel)
+pkill polybar;
+polybar example > ~/.config/Environment_PolybarLog.log 2>&1 &
+sleep 0.1; polybar example1 > ~/.config/Environment_Polybar1Log.log 2>&1 &
+
+bspc config top_padding 17 &
+
+#Raise help notification
+sh ~/.config/sxhkd/help &
+
+#exec lxpanel > ~/.config/Environment_LxpanelLog.log 2>&1
+#exec xfce4-panel > ~/.config/Environment_Xfce4panelLog.log 2>&1

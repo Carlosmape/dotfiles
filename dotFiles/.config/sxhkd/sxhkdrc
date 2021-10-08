@@ -1,0 +1,85 @@
+	#
+	#Keep this comment just like this. To keep help script format, follow this rules
+	#Lines that begins with spaces will not display in help
+	#Add command description just at the end with a comment (#)
+	#To hide a shortcut in help script, just add white spaces (tabs) at the line begining
+	#Try to make brief descriptions. For more info see help script in the same sxhdk forlder
+	#
+#Terminal emulator (urxvt)
+super + Return 	
+	urxvt
+
+#Search Ulauncher
+super + @space 
+	ulauncher-toggle
+
+#Reload sxhkd config
+super + Escape 
+	pkill -USR1 -x sxhkd && dunstify "sxhkd" "Reloaded" -t 1000 -u NORMAL
+
+#Quit/restart bspwm
+super + alt + r 
+	bspc wm -r && dunstify "bspwm" "Reloaded" -t 1000 -u NORMAL
+
+#Close/kill active window
+super + {_,shift + }w 
+	bspc node -{c,k}
+
+#Toggle monocle mode
+super + m  
+	bspc desktop -l next && dunstify "Monocle" "Toggled" -t 1000 -u LOW
+
+#Active window to biggest node
+super + g 
+	bspc node -s biggest.window
+
+#Tiled mode
+super + t 
+	bspc node -t tiled && dunstify "Fullscreen" "Off" -t 1000 -u LOW
+
+#Fullscreen mode
+super + f 
+	bspc node -t fullscreen && dunstify "Fullscreen" "On" -t 1000 -u LOW
+
+#Focus/Move the node in the given direction
+super + {_,shift + }{h,j,k,l} 
+	bspc node -{f,s} {west,south,north,east}
+
+#Focus/Send to the given desktop
+super + {_,shift + }{1-9,0} 
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#Expand/Contract a window by moving one of its side outward
+super + alt + {h,j,k,l} 
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + alt + shift + {h,j,k,l} 
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+#Move a floating window
+super + {Left,Down,Up,Right} 
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#Screenshot to file/clipboard (in ~/Pictures/) selected area
+Print + shit 
+	scrot -s ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
+@Print 
+	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
+	
+#Screenshot to file/clipboard (in ~/Pictures/) active node
+Print + alt + shift 
+	scrot -u ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
+Print + alt 
+	scrot -u -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
+
+#Media volume control
+XF86Audio{Raise,Lower}Volume 
+	amixer -D pulse sset Master 5%{+,-}
+
+#Media mute/unmute
+XF86AudioMute 
+	amixer -D pulse sset Master toggle
+
+#Media brightness control
+XF86MonBrightness{Up,Down} 
+	brightnessctl -s s 10%{+,-}
+
