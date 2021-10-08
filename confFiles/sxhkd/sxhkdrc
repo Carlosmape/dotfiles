@@ -5,11 +5,11 @@
 	#To hide a shortcut in help script, just add white spaces (tabs) at the line begining
 	#Try to make brief descriptions. For more info see help script in the same sxhdk forlder
 	#
-#Terminal emulator
+#Terminal emulator (urxvt)
 super + Return 	
 	urxvt
 
-#Ulauncher launcher 
+#Search Ulauncher
 super + @space 
 	ulauncher-toggle
 
@@ -29,77 +29,29 @@ super + {_,shift + }w
 super + m  
 	bspc desktop -l next && dunstify "Monocle" "Toggled" -t 1000 -u LOW
 
-#send the newest marked node to the newest preselected node
-super + y 
-	bspc node newest.marked.local -n newest.!automatic.local
-
 #Active window to biggest node
 super + g 
 	bspc node -s biggest.window
 
-#Back to tiled mode
+#Tiled mode
 super + t 
 	bspc node -t tiled && dunstify "Fullscreen" "Off" -t 1000 -u LOW
 
-#To fullscreen
+#Fullscreen mode
 super + f 
 	bspc node -t fullscreen && dunstify "Fullscreen" "On" -t 1000 -u LOW
 
-#Set the node flags
-super + ctrl + {m,x,y,z} 
-	bspc node -g {marked,locked,sticky,private}
-
-#Focus the node in the given direction
+#Focus/Move the node in the given direction
 super + {_,shift + }{h,j,k,l} 
 	bspc node -{f,s} {west,south,north,east}
 
-#Focus the node for the given path jump
-super + {p,b,comma,period} 
-	bspc node -f @{parent,brother,first,second}
-
-#Focus the next/previous window in the current desktop
-super + {_,shift + }c 
-	bspc node -f {next,prev}.local.!hidden.window
-
-#Focus the next/previous desktop in the current monitor
-super + bracket{left,right} 
-	bspc desktop -f {prev,next}.local
-
-#Focus the last node/desktop
-super + {grave,Tab} 
-	bspc {node,desktop} -f last
-
-#Focus the older or newer node in the focus history
-super + {o,i} 
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
-
-#Focus or send to the given desktop
+#Focus/Send to the given desktop
 super + {_,shift + }{1-9,0} 
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
-#Preselect the direction
-super + ctrl + {h,j,k,l} 
-	bspc node -p {west,south,north,east}
-
-#Preselect the ratio
-super + ctrl + {1-9} 
-	bspc node -o 0.{1-9}
-
-#Cancel the preselection for the focused node
-super + ctrl + space 
-	bspc node -p cancel
-
-#Cancel the preselection for the focused desktop
-super + ctrl + shift + space 
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
-
-#Expand a window by moving one of its side outward
+#Expand/Contract a window by moving one of its side outward
 super + alt + {h,j,k,l} 
 	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
-
-#Contract a window by moving one of its side inward
 super + alt + shift + {h,j,k,l} 
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
@@ -107,19 +59,15 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right} 
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-#Screenshot to file (inside ~/Pictures/) selected area
+#Screenshot to file/clipboard (in ~/Pictures/) selected area
 Print + shit 
 	scrot -s ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
-
-#Screenshot to clipboard selected area
 @Print 
 	scrot -s -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
 	
-#Screenshot to file (inside ~/Pictures/) active node
+#Screenshot to file/clipboard (in ~/Pictures/) active node
 Print + alt + shift 
 	scrot -u ~/Pictures/%b%d_%H%M%S.png -e 'notify-send -a "scrot" "Screenshot saved" "$f" -i "$f"'
-
-#Screenshot to clipboard active node
 Print + alt 
 	scrot -u -e 'xclip -selection clipboard -t image/png -i $f && notify-send -a "scrot" "Screenshot saved & copied" "$f" -i "$f"' ~/Pictures/%b%d_%H%M%S.png
 
