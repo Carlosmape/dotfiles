@@ -13,5 +13,6 @@ cp -rvf ~/.config/picom.conf				dotFiles/.config/picom.conf
 cp -rvf ~/.config/polybar/config			dotFiles/.config/polybar/config
 cp -rvf ~/.config/dunst/dunstrc				dotFiles/.config/dunst/dunstrc
 cp -rvf ~/.config/libinput-gestures.conf 	dotFiles/.config/libinput-gestures.conf
+cp -rvf ~/.config/ulauncher/* 				dotFiles/.config/ulauncher/
 cp -rvf ~/.Xresources						dotFiles/.Xresources
 echo "All config file updated with user ones!"

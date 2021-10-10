@@ -1,0 +1,23 @@
+{
+    "com.github.ikorjefocur.ulauncher-commandrunner": {
+        "id": "com.github.ikorjefocur.ulauncher-commandrunner",
+        "url": "https://github.com/IkorJefocur/ulauncher-commandrunner",
+        "updated_at": "2021-10-03T17:59:58.553464",
+        "last_commit": "25c09c3e803296e66873d727a0c870290deb7ac7",
+        "last_commit_time": "2021-09-24T14:05:09"
+    },
+    "com.github.jyvern.ulauncher-ssh": {
+        "id": "com.github.jyvern.ulauncher-ssh",
+        "url": "https://github.com/jyvern/ulauncher-ssh",
+        "updated_at": "2021-10-10T13:23:22.377483",
+        "last_commit": "47168e6ea45878787536ae5670612509f5dddced",
+        "last_commit_time": "2021-08-29T16:30:14"
+    },
+    "com.github.ulauncher.ulauncher-emoji": {
+        "id": "com.github.ulauncher.ulauncher-emoji",
+        "url": "https://github.com/Ulauncher/ulauncher-emoji",
+        "updated_at": "2021-10-10T13:43:26.903363",
+        "last_commit": "4c6af50d1c9a24d5aad2c597634ff0c634972a5c",
+        "last_commit_time": "2021-08-08T19:19:59"
+    }
+}
