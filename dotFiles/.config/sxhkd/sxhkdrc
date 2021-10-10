@@ -85,5 +85,5 @@ XF86AudioMute
 
 #Media brightness control
 XF86MonBrightness{Up,Down} 
-	brightnessctl -s s 10%{+,-}
+	sh ~/.config/dunst/changeBright 10%{+,-}
 

@@ -12,10 +12,10 @@ volume="$(amixer -D pulse get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9
 mute="$(amixer -D pulse get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
 if [[ $volume == 0 || "$mute" == "off" ]]; then
     # Show the sound muted notification
-    dunstify -a " " -u low -i audio-speakers -r "$msgId" "Volume muted" 
+    dunstify -a " " -u low -i speaker -r "$msgId" "Volume muted" 
 else
     # Show the volume notification
-    dunstify -a " " -u low -i audio-speakers  -r "$msgId" \
+    dunstify -a " " -u low -i speaker  -r "$msgId" \
     -h int:value:"$volume" "Volume "
 	# Play the volume changed sound
 	canberra-gtk-play -i audio-volume-change -d "changeVolume" 
