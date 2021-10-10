@@ -77,11 +77,11 @@ Print + alt
 
 #Media volume control
 XF86Audio{Raise,Lower}Volume 
-	amixer -D pulse sset Master 5%{+,-}
+	sh ~/.config/dunst/changeVolume 5%{+,-}
 
 #Media mute/unmute
 XF86AudioMute 
-	amixer -D pulse sset Master toggle
+	sh ~/.config/dunst/changeVolume 0%
 
 #Media brightness control
 XF86MonBrightness{Up,Down} 

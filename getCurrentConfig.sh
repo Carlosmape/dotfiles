@@ -11,7 +11,7 @@ cp -rvf ~/.config/sxhkd/sxhkdrc 			dotFiles/.config/sxhkd/sxhkdrc
 cp -rvf ~/.config/sxhkd/help 				dotFiles/.config/sxhkd/help
 cp -rvf ~/.config/picom.conf				dotFiles/.config/picom.conf
 cp -rvf ~/.config/polybar/config			dotFiles/.config/polybar/config
-cp -rvf ~/.config/dunst/dunstrc				dotFiles/.config/dunst/dunstrc
+cp -rvf ~/.config/dunst/*					dotFiles/.config/dunst/
 cp -rvf ~/.config/libinput-gestures.conf 	dotFiles/.config/libinput-gestures.conf
 cp -rvf ~/.config/ulauncher/* 				dotFiles/.config/ulauncher/
 cp -rvf ~/.Xresources						dotFiles/.Xresources
