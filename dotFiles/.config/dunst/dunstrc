@@ -37,7 +37,7 @@
     # Draw a line of "separator_height" pixel height between two
     # notifications.
     # Set to 0 to disable.
-    separator_height = 3
+    separator_height = 5
 	separator_color = frame
 
     # Padding between text and separator.
@@ -51,7 +51,7 @@
 	frame_color = "#1d2021"
 
     # Sort messages by urgency.
-    sort = yes
+    sort = no 
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -152,14 +152,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#282828"
-    foreground = "#9ea7a6"
+    foreground = "#83a598"
+	frame_color = "#83a598"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
     background = "#282828"
-    foreground = "#fbf1c7"
+    foreground = "#8ec07c"
+	frame_color = "#8ec07c"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
@@ -167,6 +169,7 @@
 [urgency_critical]
     background = "#282828"
     foreground = "#fb4934"
+	frame_color = "#fb4934"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
     #icon = /path/to/icon
