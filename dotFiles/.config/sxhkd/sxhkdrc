@@ -23,7 +23,7 @@ super + alt + r
 
 #Change wallpaper
 super + d
-	pkill feh; feh --bg-fill --randomize ~/Pictures/wallpapers/* 
+	pkill feh; feh --bg-fill --randomize /usr/share/backgrounds/* 
 
 #Close/kill active window
 super + {_,shift + }w 

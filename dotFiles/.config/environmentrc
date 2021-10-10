@@ -3,7 +3,7 @@
 #  Update the repository to fetch images
 cd ~/Pictures/wallpapers/ && git pull
 cd ~/
-feh --bg-fill --randomize ~/Pictures/wallpapers/* 
+feh --bg-fill --randomize /usr/share/backgrounds/* 
 
 #picom for bspwm compositor (enables some visual effects)
 picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &

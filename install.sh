@@ -30,6 +30,7 @@ then
 
 		echo "# - Fetching background repository"
 		git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
+		sudo cp -l ~/Pictures/wallpapers/* /usr/share/backgrounds/
 
 		echo "# - Fetching siji bitmap font repository"
 		git clone https://github.com/stark/siji
