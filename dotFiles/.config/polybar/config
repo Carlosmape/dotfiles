@@ -176,7 +176,7 @@ click-left = lxsession-logout
 [module/help]
 type = custom/text
 content = "  " 
-click-left = sh ~/.config/sxhkd/help
+click-left = sh ~/.config/dunst/shortcutsHelp
 content-background =  ${colors.terciary}
 content-foreground = ${colors.background}
 
