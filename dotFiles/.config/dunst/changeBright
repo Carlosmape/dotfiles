@@ -11,7 +11,7 @@ brightnessctl -s s "$1" > /dev/null
 brightness="$(brightnessctl %g | tail -3 | awk '{print $4}' | sed 's/[^0-9]*//g')"
 echo $brightness
 # Show the brightness notification
-dunstify -a " " -u low -i computer  -r "$msgId" \
+dunstify -a " " -u low -i display-brightness-symbolic  -r "$msgId" \
 	-h int:value:"$brightness" "Brightness "
 	# Play the volume changed sound
 	canberra-gtk-play -i audio-volume-change -d "changeBright" 
