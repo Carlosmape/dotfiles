@@ -76,6 +76,11 @@
     #   %%  Literal %
     # Markup is allowed
 	format = "<b>%s</b>%p\n<big>%b</big>\n\n<small>%a</small>"
+	# ProgressBar
+	highlight = "#d79921"
+	progress_bar_height = 16
+	# Frame widht - 2x padding
+	progress_bar_max_width = 484
     # Alignment of message text.
     alignment = left
     # Show age of message if message is older than show_age_threshold
@@ -103,7 +108,7 @@
     # Scale larger icons down to this size, set to 0 to disable
     max_icon_size = 90
     # Paths to default icons.
-    icon_path = /usr/share/icons/hicolor/16x16/status/:/usr/share/icons/hicolor/16x16/devices/:/usr/share/icons/hicolor/16x16/apps/:/usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/:/usr/share/icons/Adwaita/16x16/apps/
+    icon_path = /usr/share/icons/Vertex-Maia/status/64x64/:/usr/share/icons/Vertex-Maia/devices/64x64/:/usr/share/icons/Vertex-Maia/apps/scalable/:/usr/share/icons/Vertex-Maia/actions/scalable
 
     ### History ###
 
@@ -156,7 +161,7 @@
 	frame_color = "#83a598"
     timeout = 3
     # Icon for notifications with low urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = dialog-information
 
 [urgency_normal]
     background = "#282828"
@@ -164,7 +169,7 @@
 	frame_color = "#8ec07c"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = dialog-warning
 
 [urgency_critical]
     background = "#282828"
@@ -172,5 +177,5 @@
 	frame_color = "#fb4934"
     timeout = 0
     # Icon for notifications with critical urgency, uncomment to enable
-    #icon = /path/to/icon
+    icon = dialog-error
 
