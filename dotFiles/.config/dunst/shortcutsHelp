@@ -1,0 +1,3 @@
+#!/bin/bash
+shortcuts="$(sh ~/.config/sxhkd/help)"
+dunstify -a "Environment help" "⌨️ Shortcuts help" "<small>$shortcuts</small>" -t 20000 -u LOW

@@ -48,7 +48,7 @@
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
     frame_width = 3
-	frame_color = "#1d2021"
+	frame_color = "#0cffdb"
 
     # Sort messages by urgency.
     sort = no 
@@ -59,7 +59,15 @@
     # Transient notifications ignore this setting.
     idle_threshold = 120
 
-    ### Text ###
+# ProgressBar
+    progress_bar = true
+	highlight = "#0cffdb"
+	progress_bar_height = 16
+	# Frame widht - 2x padding
+	progress_bar_max_width = 484
+    progress_bar_frame_width = 0
+
+### Text ###
     font = icons 10
 	#font = "Font Awesome 5 Free Regular" 12
     #        For a complete reference see
@@ -76,11 +84,6 @@
     #   %%  Literal %
     # Markup is allowed
 	format = "<b>%s</b>%p\n<big>%b</big>\n\n<small>%a</small>"
-	# ProgressBar
-	highlight = "#d79921"
-	progress_bar_height = 16
-	# Frame widht - 2x padding
-	progress_bar_max_width = 484
     # Alignment of message text.
     alignment = left
     # Show age of message if message is older than show_age_threshold
