@@ -144,10 +144,11 @@ date =
 date-alt = "%A %d %B %Y"
 time = %H:%M
 time-alt = 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.sextuenary} 
 label = %date% %time%
+padding = 1
 
 [module/temperature]
 type = internal/temperature
