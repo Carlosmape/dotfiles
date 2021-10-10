@@ -147,16 +147,13 @@ label = %percentage_used%%
 [module/date]
 type = internal/date
 interval = 5
-
 date =
 date-alt = "%A %d %B %Y"
 time = %H:%M
 time-alt = 
-
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.sextuenary} 
-
 label = %date% %time%
 
 [module/temperature]
@@ -187,7 +184,7 @@ screenchange-reload = false
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+;pseudo-transparency = true 
 
 [global/wm]
 ;margin-top = 12

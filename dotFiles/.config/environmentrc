@@ -45,7 +45,7 @@ sleep 0.1; polybar example1 > ~/.config/Environment_Polybar1Log.log 2>&1 &
 bspc config top_padding 17 &
 
 #Raise help notification
-sh ~/.config/sxhkd/help &
+#sh ~/.config/sxhkd/help &
 
 #exec lxpanel > ~/.config/Environment_LxpanelLog.log 2>&1
 #exec xfce4-panel > ~/.config/Environment_Xfce4panelLog.log 2>&1
