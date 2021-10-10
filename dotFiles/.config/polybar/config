@@ -55,7 +55,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 font-0 = fixed:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = "Wuncon siji:pixelsize=12;1"
+font-2 = "Wuncon siji:pixelsize=16;1"
 width = 40%
 offset-x = 60%
 module-margin = 1 
@@ -78,17 +78,10 @@ foreground = ${colors.foreground}
 
 [module/launcher]
 type = custom/text
-content = "   " 
+content = "  " 
 click-left = ulauncher-toggle 
-label-layout-underline =  ${colors.secondary}
-content-foreground = ${colors.primary}
-
-[module/help]
-type = custom/text
-content = "  " 
-click-left = sh ~/.config/sxhkd/help
-layout-underline =  ${colors.secondary}
-content-foreground = ${colors.primary}
+content-background =  ${colors.primary}
+content-foreground = ${colors.background}
 
 [module/xwindow]
 type = internal/xwindow
@@ -174,9 +167,17 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/text
-content-foreground = ${colors.alert}
+content-background = ${colors.alert}
+content-foreground = ${colors.background}
 content = "  "
 click-left = lxsession-logout
+
+[module/help]
+type = custom/text
+content = "  " 
+click-left = sh ~/.config/sxhkd/help
+content-background =  ${colors.terciary}
+content-foreground = ${colors.background}
 
 [settings]
 screenchange-reload = false
