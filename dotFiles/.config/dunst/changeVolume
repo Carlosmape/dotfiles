@@ -10,15 +10,22 @@ amixer -D pulse sset Master "$1" > /dev/null
 # Query amixer for the current volume and whether or not the speaker is muted
 volume="$(amixer -D pulse get Master | tail -1 | awk '{print $5}' | sed 's/[^0-9]*//g')"
 mute="$(amixer -D pulse get Master | tail -1 | awk '{print $6}' | sed 's/[^a-z]*//g')"
+
+icon="audio-volume-muted-symbolic"
 if [[ $volume == 0 || "$mute" == "off" ]]; then
     # Show the sound muted notification
     dunstify -a " " -u low -i audio-volume-muted-symbolic -r "$msgId" "Volume muted" 
+	exit 0
+elif [[ "$volume" -ge "70" ]]; then
+    icon="audio-volume-high-symbolic"
+elif [[ "$volume" -le "30" ]]; then
+    icon="audio-volume-low-symbolic"
 else
-    # Show the volume notification
-    dunstify -a " " -u low -i audio-volume-high-symbolic  -r "$msgId" \
-    -h int:value:"$volume" "Volume "
-	# Play the volume changed sound
-	canberra-gtk-play -i audio-volume-change -d "changeVolume" 
+	icon="audio-volume-medium-symbolic"
 fi
 
+dunstify -a " " -u low -i "$icon" -r "$msgId" \
+	-h int:value:"$volume" "Volume "
 
+# Play the volume changed sound
+canberra-gtk-play -i audio-volume-change -d "changeVolume" 

@@ -10,10 +10,24 @@ brightnessctl -s s "$1" > /dev/null
 # Query brightnessctl current value 
 brightness="$(brightnessctl %g | tail -3 | awk '{print $4}' | sed 's/[^0-9]*//g')"
 echo $brightness
+
+icon="diplay-brightness-symbolic"
+
+
+if [[ $brightness -ge 70 ]]; then
+	icon="display-brightness-high-symbolic"
+elif [[ $brightness -le 30 ]]; then
+	icon="display-brightness-low-symbolic"
+else
+	icon="display-brightness-medium-symbolic"
+fi
+
+
 # Show the brightness notification
-dunstify -a " " -u low -i display-brightness-symbolic  -r "$msgId" \
+dunstify -a " " -u low -i "$icon"  -r "$msgId" \
 	-h int:value:"$brightness" "Brightness "
-	# Play the volume changed sound
-	canberra-gtk-play -i audio-volume-change -d "changeBright" 
+
+# Play the volume changed sound
+canberra-gtk-play -i audio-volume-change -d "changeBright" 
 
 
