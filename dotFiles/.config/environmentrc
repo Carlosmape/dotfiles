@@ -22,7 +22,7 @@ lxpolkit > ~/.config/Environment_LxPolkitLog.log 2>&1 &
 
 #Custom applications (systray applications)
 pkill -f slimbookbattery;
-slimbookbattery > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
+slimbookbattery --minimize > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
 pkill pamac-tray;
 pamac-tray > ~/.config/Environment_Pamac-trayLog.log 2>&1 &
 pkill nm-applet;
