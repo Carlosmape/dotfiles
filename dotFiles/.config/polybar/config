@@ -56,14 +56,10 @@ foreground = ${colors.foreground}
 font-0 = fixed:pixelsize=9;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = "Wuncon siji:pixelsize=16;1"
-width = 40%
-offset-x = 60%
+width = 27%
+offset-x = 73%
 module-margin = 1 
-tray-position = center
-tray-padding = 0 
-tray-detached = false 
-tray-offset-x = 0
-tray-offset-y = 0
+tray-position = left
 
 [bar/player]
 height = 27
