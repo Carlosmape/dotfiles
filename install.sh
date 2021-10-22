@@ -26,7 +26,7 @@ then
 		echo "INSTALLING..."
 		echo "# - Installing packages"
 		sudo pacman -S bspwm polybar feh brightnessctl urxvt scrot xorg nvim lxsession acpi
-		sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet ulauncher libinput-gestures pcmanfm manjaro-pipewire
+		sudo pamac install --no-confirm picom-jonaburg-git cbatticon pa-applet ulauncher libinput-gestures pcmanfm manjaro-pipewire lolcat
 
 		echo "# - Fetching background repository"
 		git clone https://gist.github.com/85942af486eb79118467.git ~/Pictures/wallpapers
