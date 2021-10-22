@@ -38,7 +38,7 @@ pcmanfm -d &
 pkill ulauncher;
 ulauncher --hide-window &
 pkill xurvtd;
-xurvtd &
+urxvtd > ~/.config/Environment_Urxvtd.log 2>&1 &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
