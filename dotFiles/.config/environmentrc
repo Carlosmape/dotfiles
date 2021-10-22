@@ -37,6 +37,8 @@ pkill pcmanfm;
 pcmanfm -d &
 pkill ulauncher;
 ulauncher --hide-window &
+pkill xurvtd;
+xurvtd &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
