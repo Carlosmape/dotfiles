@@ -1,4 +1,6 @@
 # Full development environment settings    
+![image](https://user-images.githubusercontent.com/5487555/139298746-b4472931-8105-4ae8-a675-57c080932fe2.png)
+
 # Dependency tools    
   - Desktop environment   
     - bspwm [Tiling window manager]   
