@@ -31,16 +31,12 @@
 *.color7:      #fbf1c7
 *.color15:     #ebdbb2
 ! orange
-*.color16: 	   #fe8019
+*.color16:	   #fe8019
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
 
-URxvt*transparent:       true
-URxvt*shading:       15
-
-URxvt*depth: 32
-URxvt.background: [15]#282828
+URxvt*transparent:       false
 
 URxvt.font: xft:Droid Sans Mono:pixelsize=12
 URxvt.letterSpace: 0
