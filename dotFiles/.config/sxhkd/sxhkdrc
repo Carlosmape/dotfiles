@@ -7,7 +7,7 @@
 	#
 #Terminal emulator (urxvt)
 super + Return 	
-	urxvtc
+	urxvtc 
 
 #Search Ulauncher
 super + @space 
