@@ -5,7 +5,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 bspc monitor -d I II III IV V 
 
 bspc config border_width         1
-bspc config window_gap          12
+bspc config window_gap          15
 bspc config focused_border_color "#ffb52a"
 
 bspc config split_ratio          0.5
@@ -13,11 +13,11 @@ bspc config split_ratio          0.5
 bspc config focus_follows_pointer false
 
 bspc rule -a Gimp desktop=III state=monocle follow=on
-bspc rule -a libreoffice desktop=II state=monocle follow=on
-bspc rule -a thunderbird desktop=II state=monocle follow=on
+bspc rule -a libreoffice desktop=III state=monocle follow=on
+bspc rule -a thunderbird desktop=III state=monocle follow=on
 bspc rule -a Screenkey manage=off
 bspc rule -a lxpanel manage=off
-bspc rule -a Ulauncher border=off focus=on 
+bspc rule -a Ulauncher border=off focus=on  state=floating
 
 #run additional components
-exec ~/.config/environmentrc
+exec ~/.config/environmentrc > ~/.config/Environment.log 2>&1

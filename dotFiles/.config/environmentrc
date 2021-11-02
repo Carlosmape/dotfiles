@@ -6,25 +6,26 @@ cd ~/
 feh --bg-fill --randomize /usr/share/backgrounds/* 
 
 #picom for bspwm compositor (enables some visual effects)
-picom --experimental-backend > ~/.config/Environment_PicomLog.log 2>&1 &
+picom --experimental-backend  &
 
 #Able touchpad gestures and more
+#Find touchpad device id
+touchpad=$(xinput --list --short | grep -i touchpad | awk '{print $6}' | sed 's/id=//')
 #Tap to click
-#xinput set-prop 13 311 1 > ~/.config/Environment_XinputLog.log 2>&1 
-xinput set-prop 13 'libinput Tapping Enabled' 1
-xinput set-prop 13 'libinput Natural Scrolling Enabled' 1
-xinput set-prop 13 'libinput Accel Speed' 0.2
+xinput set-prop $touchpad 'libinput Tapping Enabled' 1
+xinput set-prop $touchpad 'libinput Natural Scrolling Enabled' 1
+xinput set-prop $touchpad 'libinput Accel Speed' 0.2
 pkill libinput-gestures;
 libinput-gestures &
 
 #Polkit agent (GUI for ask password)
-lxpolkit > ~/.config/Environment_LxPolkitLog.log 2>&1 & 
+lxpolkit &
 
 #Custom applications (systray applications)
 pkill -f slimbookbattery;
-slimbookbattery --minimize > ~/.config/Environment_SlimbookBatteryLog.log 2>&1 &
+slimbookbattery --minimize &
 pkill pamac-tray;
-pamac-tray > ~/.config/Environment_Pamac-trayLog.log 2>&1 &
+pamac-tray &
 pkill nm-applet;
 nm-applet &
 pkill blueman-applet;
@@ -38,12 +39,12 @@ pcmanfm -d &
 pkill ulauncher;
 ulauncher --hide-window &
 pkill xurvtd;
-urxvtd > ~/.config/Environment_Urxvtd.log 2>&1 &
+urxvtd &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
-polybar example > ~/.config/Environment_PolybarLog.log 2>&1 &
-sleep 0.1; polybar example1 > ~/.config/Environment_Polybar1Log.log 2>&1 &
+polybar example &
+sleep 0.1; polybar example1 &
 
 bspc config top_padding 17 &
 
