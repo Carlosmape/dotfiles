@@ -14,7 +14,7 @@ touchpad=$(xinput --list --short | grep -i touchpad | awk '{print $6}' | sed 's/
 #Tap to click
 xinput set-prop $touchpad 'libinput Tapping Enabled' 1
 xinput set-prop $touchpad 'libinput Natural Scrolling Enabled' 1
-xinput set-prop $touchpad 'libinput Accel Speed' 0.2
+xinput set-prop $touchpad 'libinput Accel Speed' 0.3
 pkill libinput-gestures;
 libinput-gestures &
 
@@ -40,6 +40,8 @@ pkill ulauncher;
 ulauncher --hide-window &
 pkill xurvtd;
 urxvtd &
+pkill kdeconnect-indicator;
+kdeconnect-indicator &
 
 #Polybar (TBC: maybe use another panel)
 pkill polybar;
