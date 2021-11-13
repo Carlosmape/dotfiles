@@ -9,6 +9,10 @@
 super + Return 	
 	urxvtc 
 
+#Nvim
+super + v
+	urxvtc --title nvim  --working-directory ~/Documentos/Repositories/ -e $SHELL -lc "nvim"
+
 #Search Ulauncher
 super + @space 
 	ulauncher-toggle
