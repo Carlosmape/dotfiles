@@ -9,9 +9,9 @@
 super + Return 	
 	urxvtc 
 
-#Nvim
+#NeoVim
 super + v
-	urxvtc --title nvim  --working-directory ~/Documentos/Repositories/ -e $SHELL -lc "nvim"
+	urxvtc --title NeoVim  --working-directory ~/Documentos/Repositories/ -e $SHELL -lc "nvim"
 
 #Search Ulauncher
 super + @space 
