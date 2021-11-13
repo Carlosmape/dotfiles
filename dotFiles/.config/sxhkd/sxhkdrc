@@ -45,6 +45,10 @@ super + t
 super + f 
 	bspc node -t fullscreen && dunstify "Fullscreen" "On" -t 1000 -u LOW
 
+#Next/prev window
+alt + {_,shift +}Tab
+ 	bspc node -f {next,prev}.local.window
+
 #Focus/Move the node in the given direction
 super + {_,shift + }{h,j,k,l} 
 	bspc node -{f,s} {west,south,north,east}
